@@ -1,8 +1,5 @@
 class Task:
-    def __init__(self, title):
+    def __init__(self, task_id, title, status="Pending"):
+        self.task_id = task_id
         self.title = title
-        self.completed = False
-
-    def mark_as_completed(self):
-        self.completed = True
-    
+        self.status = status
