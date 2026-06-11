@@ -1,6 +1,8 @@
 from models.user import User
 
-user = User("Kerry")
+def test_user_creation():
+    user = User("1", "Kerry")
 
-print(user.name)
-print(user.projects)
+    assert user.user_id == "1"
+    assert user.name == "Kerry"
+    assert user.projects == []
