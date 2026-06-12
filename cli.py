@@ -16,7 +16,7 @@ def show_menu():
 # Starts the command-line interface.
 def run_cli():
     service = TaskManagerService()
-
+  # Keeps the CLI running until the user chooses to exit.
     while True:
         show_menu()
         command = input("\nEnter command: ")
