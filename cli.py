@@ -8,6 +8,7 @@ def show_menu():
     print("add_project")
     print("update_status")
     print("add_task")
+    print("delete")
     print("view_all")
     print("exit")
 
@@ -57,6 +58,44 @@ def run_cli():
             title = input("Task Title: ")
             service.add_task(user_id, project_id, task_id, title)
             print("Task added!")
+
+        # Delete a user, project, or task.
+        elif command == "delete":
+            print("Delete:")
+            print("1. User")
+            print("2. Project")
+            print("3. Task")
+            choice = input("Choose what to delete: ")
+
+            if choice == "1":
+                user_id = input("User ID: ")
+                user = service.delete_user(user_id)
+                if user:
+                    print("User deleted!")
+                else:
+                    print("User not found.")
+
+            elif choice == "2":
+                user_id = input("User ID: ")
+                project_id = input("Project ID: ")
+                project = service.delete_project(user_id, project_id)
+                if project:
+                    print("Project deleted!")
+                else:
+                    print("Project not found.")
+
+            elif choice == "3":
+                user_id = input("User ID: ")
+                project_id = input("Project ID: ")
+                task_id = input("Task ID: ")
+                task = service.delete_task(user_id, project_id, task_id)
+                if task:
+                    print("Task deleted!")
+                else:
+                    print("Task not found.")
+
+            else:
+                print("Invalid delete choice.")
 
         # Display all users, projects, and tasks.
         elif command == "view_all":

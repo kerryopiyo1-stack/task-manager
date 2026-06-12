@@ -1,2 +1,20 @@
 [
     {
+        "user_id": "1",
+        "name": "kerry",
+        "projects": [
+            {
+                "project_id": "1",
+                "name": "python",
+                "status": "Completed",
+                "tasks": [
+                    {
+                        "task_id": "1",
+                        "title": "CLI based project",
+                        "status": "Pending"
+                    }
+                ]
+            }
+        ]
+    }
+]

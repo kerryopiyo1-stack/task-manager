@@ -14,7 +14,10 @@ def load_data():
         # Empty files should behave like no saved data.
         if os.path.getsize(FILE_PATH) == 0:
             return []
-        return json.load(f)
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            return []
 
 
 # Save data back to the JSON file.
